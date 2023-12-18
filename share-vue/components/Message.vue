@@ -11,7 +11,7 @@
                 <span v-if="likes.post_id === post.id" class="like-counts">{{ likes.likes_count }}</span>
               </li>
             </ul>
-            <button @click="deletePost(post.id)" class="btn"><img src="~/assets/image/cross.png" class="cross"></button>
+            <button v-if="post.user_uid === user_uid" @click="deletePost(post.id)" class="btn"><img src="~/assets/image/cross.png" class="cross"></button>
             <NuxtLink :to="/posts/ + post.id" class="link"><img src="~/assets/image/detail.png" class="detail"></NuxtLink>
           </div>
           <p class="message-text">{{ post.post }}</p>
@@ -19,11 +19,11 @@
       </ul>
       <div v-if="!home && postList !== ''" class="message-detail">
         <div class="message__container">
-          <p class="user-name">{{postList.name}}</p>
+          <p class="user-name">{{ postList.name }}</p>
           <button v-if="likeList.like === 0" @click="like(user_uid, postList.id)" class="btn"><img src="~/assets/image/heart.png" class="like"></button>
           <button v-if="likeList.like !== 0" @click="deleteLike(user_uid, postList.id)" class="btn"><img src="~/assets/image/heart.png" class="like"></button>
           <span class="like-counts">{{ likeList.likes_count }}</span>
-          <button @click="deletePost(postList.id)" class="btn"><img src="~/assets/image/cross.png" class="cross"></button>
+          <button v-if="postList.user_uid === user_uid" @click="deletePost(postList.id)" class="btn"><img src="~/assets/image/cross.png" class="cross"></button>
         </div>
         <p class="message-text">{{ postList.post }}</p>
       </div>
