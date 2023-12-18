@@ -1,0 +1,60 @@
+.message {
+  border: 1px solid #fff;
+}
+
+.message-list {
+  padding: 16px;
+  border-bottom: 1px solid #fff;
+}
+
+.message-list:last-child {
+  border-bottom: none;
+}
+
+.message__container {
+  display: flex;
+  margin-bottom: 16px;
+  vertical-align: middle;
+}
+
+.user-name,
+.like-counts {
+  margin: 6px 8px 0 0;
+}
+
+.btn {
+  background: inherit;
+  border: none;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+.like,
+.cross,
+.detail {
+  display: inline-block;
+  width: 30px;
+  object-fit: cover;
+  vertical-align: middle;
+}
+
+.like-counts {
+  margin-right: 8px;
+}
+
+.link {
+  position: relative;
+}
+
+.detail {
+  margin-top: 4px;
+  margin-left: 64px;
+}
+
+.message-text {
+  font-size: 16px;
+}
+
+.message-detail {
+  padding: 16px;
+}
